@@ -1,3 +1,15 @@
 <div class="container">
-  
+  <h1>Diary</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let entrys of diaryentry; let i=index'>
+        <p>{{entrys.title}} published on {{entrys.entrydate|date}}</p>
+        <button (click)='toggleentry(i)' class="btn btn-primary">Entry</button>
+        <div *ngIf='entrys.'>
+          <app-dayevents [entries]='entrys'></app-dayevents>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
