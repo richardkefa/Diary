@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Diary"
+    }
+  },
+  "defaultProject": "Diary",
+  "cli": {
+    "analytics": "1d0c1d53-449a-4f74-9464-abde72648763"
+  }
 }
