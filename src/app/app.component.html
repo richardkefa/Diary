@@ -4,9 +4,9 @@
     <div class="col-md-6">
       <div *ngFor='let entrys of diaryentry; let i=index'>
         <p>{{entrys.title}} published on {{entrys.entrydate|date}}</p>
-        <button (click)='toggleentry(i)' class="btn btn-primary">Entry</button>
-        <div *ngIf='entrys.'>
-          <app-dayevents [entries]='entrys'></app-dayevents>
+        <button (click)='toggleEntry(i)' class="btn btn-primary">Entry</button>
+        <div >
+          <app-dayevents *ngIf='entrys.showentry' [entries]='entrys'></app-dayevents>
         </div>
       </div>
 

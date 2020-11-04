@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Diaryentry} from './diaryentry'
+import { DiaryentryServiceService } from './diaryentry-service/diaryentry-service.service'
 import { from } from 'rxjs';
 
 @Component({
@@ -8,12 +9,16 @@ import { from } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  diaryentry:Diaryentry[] = [
-    new Diaryentry(1,'best day','this is my best day',new Date(2020,3,20)),
-    new Diaryentry(2,'best day','this is my best day',new Date(2020,3,20)),
-    new Diaryentry(3,'best day','this is my best day',new Date(2020,3,20))
-  ];
-  toogleentry(index){
+  public diaryentry: any=[]
+  
+  toogleEntry(index) {
     this.diaryentry[index].showentry= !this.diaryentry[index].showentry;
+  }
+  constructor(private diaryEntryService: DiaryentryServiceService) { 
+   
+  }
+
+  ngOnInit() {
+    this.diaryentry= this.diaryEntryService.getDiaryEntry()
   }
 }

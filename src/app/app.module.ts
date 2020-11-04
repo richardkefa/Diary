@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DayeventsComponent } from './dayevents/dayevents.component';
+import { DiaryentryServiceService } from './diaryentry-service/diaryentry-service.service'
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { DayeventsComponent } from './dayevents/dayevents.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DiaryentryServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
